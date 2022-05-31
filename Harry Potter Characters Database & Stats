@@ -1,3 +1,5 @@
+#In this SQL code, I am querying  a database that is holding Harry Potter data to answer questions about the books and characters. 
+
 CREATE TABLE Harry_Potter_Characters (id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, blood_type TEXT);
 INSERT INTO Harry_Potter_Characters (first_name, last_name, blood_type)
 VALUES ("Harry", "Potter", "half_blood");
@@ -149,33 +151,33 @@ VALUES (8, "Deathy_Hallows");
 
 
 
-/*cross join*/
+#/*cross join*/
 SELECT * FROM Harry_Potter_Characters, houses;
 
-/*implicit inner join*/
+#/*implicit inner join*/
 SELECT * FROM Harry_Potter_Characters, houses
     WHERE houses.character_id= Harry_Potter_Characters.id;
     
-/*explicit inner join-JOIN*/
+#/*explicit inner join-JOIN*/
 SELECT * FROM Harry_Potter_Characters
      JOIN houses
      ON Harry_Potter_Characters.id=houses.character_id;
      
-What house is each character in?
+#1. What house is each character in?
 
 SELECT Harry_Potter_Characters.first_name, Harry_Potter_Characters.last_name, houses.house 
      FROM Harry_Potter_Characters
      JOIN houses
      ON Harry_Potter_Characters.id=houses.character_id;
      
-Which characters appear in each book?
+#2. Which characters appear in each book?
      
 SELECT Harry_Potter_Characters.first_name, Harry_Potter_Characters.last_name, Books.book_title
      FROM Harry_Potter_Characters
      JOIN Books
      ON Harry_Potter_Characters.id=Books.character_id;
  
- Which blood-type of wizard appears in each house?
+ #3. Which blood-type of wizard appears in each house?
      
 SELECT Harry_Potter_Characters.blood_type, houses.house
      FROM Harry_Potter_Characters
