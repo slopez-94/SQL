@@ -5,7 +5,7 @@
  Collected by: https://www.khanacademy.org/profile/Mentrasto/
  */
 
-CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
+CREATE TABLE marvels (ID INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     popularity INTEGER,
     alignment TEXT,
