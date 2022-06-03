@@ -23,3 +23,9 @@ SELECT SUM(quantity) FROM clothing_store;
 
 --display the database ordered by price. 
 SELECT * FROM clothing_store ORDER BY price;
+
+--What is the total number of items soted by items?
+SELECT item, SUM(quantity) FROM clothing_store GROUP BY item;
+
+--What is the max amount of items sorted by items?
+SELECT item, MAX(quantity) FROM clothing_store GROUP BY item;
