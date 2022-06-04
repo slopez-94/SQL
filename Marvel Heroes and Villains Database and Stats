@@ -80,4 +80,4 @@ WHEN popularity <30 THEN "front row"
 WHEN popularity <20 THEN "middle row"
 WHEN popularity <10 THEN "last row"
 END as "comic_con placement"
-FROM marvels 
+FROM marvels GROUP BY "comic_con placement"
