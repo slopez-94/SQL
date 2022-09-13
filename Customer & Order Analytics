@@ -120,3 +120,17 @@ cust.acctnum
 ,Feb.price
 ,Feb.orderdate
 ,Feb.location
+
+-The data contains the full address of each customer, but now we only want the city. To get just the city: 
+
+IF CONTAINS([Purchase Address],'Los Angeles') THEN 'Los Angeles'
+ELSEIF CONTAINS([Purchase Address],'San Francisco') THEN 'San Francisco'
+ELSEIF CONTAINS([Purchase Address],'New York') THEN 'New York'
+ELSEIF CONTAINS([Purchase Address],'Boston') THEN 'Boston'
+ELSEIF CONTAINS([Purchase Address],'Seattle') THEN 'Seattle'
+ELSEIF CONTAINS([Purchase Address],'Portland') THEN 'Portland'
+ELSEIF CONTAINS([Purchase Address],'Austin') THEN 'Austin'
+ELSEIF CONTAINS([Purchase Address],'Dallas') THEN 'Dallas'
+ELSEIF CONTAINS([Purchase Address],'Atlanta') THEN 'Atlanta'
+ELSE 'Other'
+END
