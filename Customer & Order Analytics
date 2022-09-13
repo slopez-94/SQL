@@ -134,3 +134,12 @@ ELSEIF CONTAINS([Purchase Address],'Dallas') THEN 'Dallas'
 ELSEIF CONTAINS([Purchase Address],'Atlanta') THEN 'Atlanta'
 ELSE 'Other'
 END
+
+-location to just be state:
+IF[Purchase Address]<>'Purchase Address'
+
+THEN
+
+LEFT(RIGHT([Purchase Address],8),2)
+
+END
